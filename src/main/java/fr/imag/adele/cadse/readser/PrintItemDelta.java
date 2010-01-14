@@ -71,12 +71,14 @@ public class PrintItemDelta extends ItemDeltaImpl {
 			for (IAttributeType<?> k : _atts.keySet()) {
 				sb.append(tab).append("  <attribute ");
 				XMLPersistance.writeXML(sb, "id", k.getId().toString());
-				XMLPersistance.writeXML(sb, "id", k.getSource().getId().toString());
-				XMLPersistance.writeXML(sb, "id", k.getSource().getCadseId().toString());
+				XMLPersistance.writeXML(sb, "source-id", k.getSource().getId().toString());
+				UUID cadseId = k.getSource().getCadseId();
+				if (cadseId != null)
+					XMLPersistance.writeXML(sb, "source-cadse-id", cadseId.toString());
 				
 				XMLPersistance.writeXML(sb, "name", k.getName());
 				XMLPersistance.writeXML(sb, "value", _atts.get(k).toString());
-				sb.append("\\>\n");
+				sb.append(" \\>\n");
 			}
 			
 			for (LinkDelta l : links) {
