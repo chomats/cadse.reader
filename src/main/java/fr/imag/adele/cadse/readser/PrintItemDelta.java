@@ -9,6 +9,7 @@ import fr.imag.adele.cadse.core.CadseException;
 import fr.imag.adele.cadse.core.ItemType;
 import fr.imag.adele.cadse.core.LinkType;
 import fr.imag.adele.cadse.core.attribute.IAttributeType;
+import fr.imag.adele.cadse.core.impl.internal.LogicalWorkspaceTransactionImpl;
 import fr.imag.adele.cadse.core.impl.internal.delta.ItemDeltaImpl;
 import fr.imag.adele.cadse.core.transaction.delta.ItemDelta;
 import fr.imag.adele.cadse.core.transaction.delta.LinkDelta;
@@ -26,8 +27,8 @@ public class PrintItemDelta extends ItemDeltaImpl {
 	
 	
 	
-	public PrintItemDelta(UUID id, ItemType typeObj) throws CadseException {
-		super(null, id, typeObj, false);
+	public PrintItemDelta(LogicalWorkspaceTransactionImpl lw, UUID id, ItemType typeObj) throws CadseException {
+		super(lw, id, typeObj, false);
 		_id = id;
 		_typeObj = typeObj;
 		_type = _typeObj.getId();
@@ -146,5 +147,9 @@ public class PrintItemDelta extends ItemDeltaImpl {
 		_atts.put(key, newCurrentValue);
 	}
 
+	@Override
+	public void setReadOnly(boolean readOnly, boolean loaded)
+			throws CadseException {
+	}
 	
 }

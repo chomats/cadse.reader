@@ -24,7 +24,7 @@ final class PrintLogicalW extends LogicalWorkspaceTransactionImpl {
 
 
 	public ItemDelta loadItem(UUID id, ItemType type) throws CadseException {
-		return new PrintItemDelta(id, type);
+		return new PrintItemDelta(this, id, type);
 	}
 
 }
