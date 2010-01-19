@@ -21,19 +21,12 @@
 					<instructions>
 						<Export-Package>fr.imag.adele.cadse.readser</Export-Package>
 						<Private-Package></Private-Package>
-						<Import-Package>!*</Import-Package> 
+						<Import-Package>*</Import-Package> 
 						<Include-Resource>
-							{maven-resources}, {maven-dependencies},
 							cadse-cadseg.xml=../Model.Workspace.CadseG/model/cadse.xml
             			</Include-Resource>            			     
-            			<Class-Path>., {maven-dependencies}</Class-Path>
-						<Main-Class>fr.imag.adele.cadse.readser.Main</Main-Class>
-						<Embed-Dependency>*</Embed-Dependency>
-						<Embed-Transitive>true</Embed-Transitive>
-						<Embed-Directory>target/dependency</Embed-Directory>
-	            		<Embed-StripGroup>true</Embed-StripGroup>
-	            		<Bundle-ClassPath>.,{maven-dependencies}</Bundle-ClassPath>
-	            		
+            			<Class-Path>.</Class-Path>
+						<Main-Class>fr.imag.adele.cadse.readser.Main</Main-Class>	            		
 					</instructions>
 				</configuration>
 			</plugin>
