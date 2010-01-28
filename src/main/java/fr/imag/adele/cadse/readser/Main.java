@@ -13,6 +13,7 @@ import org.osgi.framework.BundleContext;
 import fr.imag.adele.cadse.core.CadseException;
 import fr.imag.adele.cadse.core.impl.internal.CadseDomainImpl;
 import fr.imag.adele.cadse.core.transaction.LogicalWorkspaceTransactionListener;
+import fr.imag.adele.cadse.core.transaction.delta.ItemDelta;
 import fr.imag.adele.fede.workspace.si.persistence.Persistence;
 import fr.imag.adele.fede.workspace.si.initmodel.InitModel;
 import fr.imag.adele.teamwork.db.ModelVersionDBService2;
@@ -58,7 +59,9 @@ public class Main {
 				for (int i = 0; i < ser.length; i++) {
 					if (ser[i].getName().endsWith(".ser")) {
 						try {
-							p.loadFromPersistence(wl, ser[i].toURL()).toString(sb, "");
+							ItemDelta loadedItem = p.loadFromPersistence(wl, ser[i].toURL());
+							if (loadedItem != null)
+								loadedItem.toString(sb, "");
 						} catch (MalformedURLException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
