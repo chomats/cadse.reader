@@ -1,0 +1,40 @@
+Manifest-Version: 1.0
+Export-Package: fr.imag.adele.cadse.readser;uses:="fr.imag.adele.cadse
+ .core.transaction,fr.imag.adele.fede.workspace.si.initmodel,fr.imag.a
+ dele.cadse.workspace.si.defaultclassreferencer,fr.imag.adele.cadse.co
+ re.impl.internal,fr.imag.adele.fede.workspace.as.initmodel,fr.imag.ad
+ ele.teamwork.db.impl,fr.imag.adele.cadse.workspace.as.classreferencer
+ ,fr.imag.adele.melusine.as.findmodel,fr.imag.adele.cadse.as.platformi
+ de,fr.imag.adele.teamwork.db,fr.imag.adele.cadse.core.transaction.del
+ ta,fr.imag.adele.cadse.core,fr.imag.adele.cadse.core.impl.db,org.osgi
+ .framework,fr.imag.adele.fede.workspace.si.persistence,fr.imag.adele.
+ cadse.core.impl.internal.delta,fr.imag.adele.cadse.core.attribute,fr.
+ imag.adele.cadse.core.internal"
+Private-Package: .
+Built-By: chomats
+Class-Path: .
+Tool: Bnd-0.0.357
+Bundle-Name: readser
+Created-By: Apache Maven Bundle Plugin
+Bundle-Vendor: Adele/LIG/ Grenoble University, France
+Build-Jdk: 1.6.0_17
+Bundle-Version: 2.3.0.SNAPSHOT
+Bundle-ManifestVersion: 2
+Import-Package: fr.imag.adele.cadse.as.platformide;version="2.3",fr.im
+ ag.adele.cadse.core;version="2.3",fr.imag.adele.cadse.core.attribute;
+ version="2.3",fr.imag.adele.cadse.core.impl.db;version="2.3",fr.imag.
+ adele.cadse.core.impl.internal;version="2.3",fr.imag.adele.cadse.core
+ .impl.internal.delta;version="2.3",fr.imag.adele.cadse.core.internal;
+ version="2.3",fr.imag.adele.cadse.core.transaction;version="2.3",fr.i
+ mag.adele.cadse.core.transaction.delta;version="2.3",fr.imag.adele.ca
+ dse.readser,fr.imag.adele.cadse.workspace.as.classreferencer;version=
+ "2.3",fr.imag.adele.cadse.workspace.si.defaultclassreferencer;version
+ ="2.3",fr.imag.adele.fede.workspace.as.initmodel;version="2.3",fr.ima
+ g.adele.fede.workspace.si.initmodel;version="2.3",fr.imag.adele.fede.
+ workspace.si.persistence;version="2.3",fr.imag.adele.melusine.as.find
+ model;version="2.3",fr.imag.adele.teamwork.db;version="2.3",fr.imag.a
+ dele.teamwork.db.impl,org.osgi.framework;version="1.3"
+Bundle-SymbolicName: readser;singleton:=true
+Bundle-DocURL: http://www-adele.imag.fr/
+Main-Class: fr.imag.adele.cadse.readser.Main
+
