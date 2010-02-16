@@ -623,4 +623,10 @@ public class PrintLinkDelta implements LinkDelta {
 		return null;
 	}
 
+	@Override
+	public void setAttribute(IAttributeType<?> key, Object v) {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Not implemented method");
+	}
+
 }
