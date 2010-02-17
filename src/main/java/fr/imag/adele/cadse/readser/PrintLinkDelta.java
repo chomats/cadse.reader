@@ -276,7 +276,7 @@ public class PrintLinkDelta implements LinkDelta {
 	}
 
 	@Override
-	public boolean isStatic() {
+	public boolean isRuntime() {
 		// TODO Auto-generated method stub
 		return false;
 	}
