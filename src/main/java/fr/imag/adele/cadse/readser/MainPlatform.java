@@ -15,6 +15,7 @@ import fr.imag.adele.cadse.as.platformide.IPlatformListener;
 import fr.imag.adele.cadse.core.CadseException;
 import fr.imag.adele.cadse.core.CadseRuntime;
 import fr.imag.adele.cadse.core.Item;
+import fr.imag.adele.cadse.core.content.ContentItem;
 
 public final class MainPlatform implements IPlatformIDE {
 	BundleContext _bundleContext ;
@@ -135,5 +136,11 @@ public final class MainPlatform implements IPlatformIDE {
 	public void activateIDE() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public String getRessourceName(ContentItem contentItem) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
