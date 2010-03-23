@@ -1,4 +1,4 @@
-package fr.imag.adele.cadse.readser;
+package fr.imag.adele.cadse.embedded;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,12 +13,12 @@ import org.osgi.framework.BundleException;
 import org.osgi.framework.ServiceReference;
 import org.osgi.framework.Version;
 
-public class MainBundle implements Bundle {
+public class EmbeddedBundle implements Bundle {
 
 	BundleContext _bundleContext;
 	private String _symbolicName;
 	
-	public MainBundle(BundleContext bundleContext, String symbolicName) {
+	public EmbeddedBundle(BundleContext bundleContext, String symbolicName) {
 		_bundleContext = bundleContext;
 		_symbolicName = symbolicName;
 	}

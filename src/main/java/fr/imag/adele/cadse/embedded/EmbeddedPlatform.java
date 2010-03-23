@@ -16,7 +16,6 @@ import fr.imag.adele.cadse.core.CadseException;
 import fr.imag.adele.cadse.core.CadseRuntime;
 import fr.imag.adele.cadse.core.Item;
 import fr.imag.adele.cadse.core.content.ContentItem;
-import fr.imag.adele.cadse.readser.MainBundle;
 
 public final class EmbeddedPlatform implements IPlatformIDE {
 	BundleContext _bundleContext ;
@@ -107,7 +106,7 @@ public final class EmbeddedPlatform implements IPlatformIDE {
 
 	@Override
 	public Bundle findBundle(String symbolicName) {
-		return new MainBundle(_bundleContext, symbolicName);
+		return new EmbeddedBundle(_bundleContext, symbolicName);
 	}
 
 	@Override

@@ -18,7 +18,6 @@ import org.osgi.framework.ServiceListener;
 import org.osgi.framework.ServiceReference;
 import org.osgi.framework.ServiceRegistration;
 
-import fr.imag.adele.cadse.readser.MainBundle;
 
 public class EmbeddedBundleContext implements BundleContext {
 
@@ -56,7 +55,7 @@ public class EmbeddedBundleContext implements BundleContext {
 
 	@Override
 	public Bundle getBundle() {
-		return new MainBundle(this, "Main");
+		return new EmbeddedBundle(this, "Main");
 	}
 
 	@Override
