@@ -1,7 +1,7 @@
 /**
  * 
  */
-package fr.imag.adele.cadse.readser;
+package fr.imag.adele.cadse.embedded;
 
 import java.io.File;
 import java.net.URL;
@@ -16,8 +16,9 @@ import fr.imag.adele.cadse.core.CadseException;
 import fr.imag.adele.cadse.core.CadseRuntime;
 import fr.imag.adele.cadse.core.Item;
 import fr.imag.adele.cadse.core.content.ContentItem;
+import fr.imag.adele.cadse.readser.MainBundle;
 
-public final class MainPlatform implements IPlatformIDE {
+public final class EmbeddedPlatform implements IPlatformIDE {
 	BundleContext _bundleContext ;
 	
 	@Override

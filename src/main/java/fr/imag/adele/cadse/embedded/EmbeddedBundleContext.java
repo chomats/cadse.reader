@@ -1,4 +1,4 @@
-package fr.imag.adele.cadse.readser;
+package fr.imag.adele.cadse.embedded;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,7 +20,7 @@ import org.osgi.framework.ServiceRegistration;
 
 import fr.imag.adele.cadse.readser.MainBundle;
 
-public class MainBundleContext implements BundleContext {
+public class EmbeddedBundleContext implements BundleContext {
 
 	@Override
 	public void addBundleListener(BundleListener listener) {

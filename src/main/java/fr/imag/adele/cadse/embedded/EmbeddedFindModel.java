@@ -1,7 +1,7 @@
 /**
  * 
  */
-package fr.imag.adele.cadse.readser;
+package fr.imag.adele.cadse.embedded;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,7 +11,7 @@ import fr.imag.adele.melusine.as.findmodel.CheckModel;
 import fr.imag.adele.melusine.as.findmodel.IFindModel;
 import fr.imag.adele.melusine.as.findmodel.ModelEntry;
 
-final class MainFindModel implements IFindModel {
+final class EmbeddedFindModel implements IFindModel {
 	MainModelEntry cadsegModel = new MainModelEntry();
 	
 	class MainModelEntry implements ModelEntry {

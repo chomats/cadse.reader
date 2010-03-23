@@ -21,6 +21,9 @@ import fr.imag.adele.cadse.workspace.si.defaultclassreferencer.DefaultClassRefer
 import fr.imag.adele.teamwork.db.impl.ModelVersionDBImpl2;
 import fr.imag.adele.teamwork.db.impl.ModelVersionDBImpl2;
 import fr.imag.adele.cadse.cadseg.managers.mc.MC_StringToJavaElementManager;
+import fr.imag.adele.cadse.embedded.EmbeddedBundleContext;
+import fr.imag.adele.cadse.embedded.EmbeddedCadse;
+import fr.imag.adele.cadse.embedded.EmbeddedPlatform;
 
 public class Main {
 	
@@ -34,32 +37,19 @@ public class Main {
 		
 		java.io.File dir = new java.io.File(args[0]);
 		StringBuilder sb = new StringBuilder();
-		Persistence p  = new Persistence();
-		InitModel initModel = new InitModel();
-		initModel.classReferencer = new DefaultClassReferencer();
-		CadseDomainImpl cadseDomainImpl = new CadseDomainImpl();
-		cadseDomainImpl._initModelService = initModel;
-		MainPlatform mainPlatform = new MainPlatform();
-		mainPlatform._bundleContext = new MainBundleContext();
-		ModelVersionDBImpl2 modelVersionDBImpl2 = new ModelVersionDBImpl2(mainPlatform._bundleContext);
-		cadseDomainImpl._modelDB2Service = modelVersionDBImpl2;
-		initModel.workspaceCU = cadseDomainImpl;
-		initModel.platformService = mainPlatform;
-		initModel.findModel = new MainFindModel();
 		
+		EmbeddedCadse cadse = new EmbeddedCadse();
 		
-		cadseDomainImpl.start();
-		modelVersionDBImpl2.start();
 		try {
-			initModel.loadCadses();
+			cadse.start();
 			LogicalWorkspaceTransactionListener[] dd = new LogicalWorkspaceTransactionListener[0];
-			PrintLogicalW wl = new PrintLogicalW(cadseDomainImpl.getLogicalWorkspace(), dd );
+			PrintLogicalW wl = new PrintLogicalW(cadse.getCadseDomain().getLogicalWorkspace(), dd );
 			if (args.length == 1) {
 				File[] ser = dir.listFiles();
 				for (int i = 0; i < ser.length; i++) {
 					if (ser[i].getName().endsWith(".ser")) {
 						try {
-							ItemDelta loadedItem = p.loadFromPersistence(wl, ser[i].toURL());
+							ItemDelta loadedItem = cadse.getPersistence().loadFromPersistence(wl, ser[i].toURL());
 							if (loadedItem != null)
 								loadedItem.toString(sb, "");
 						} catch (MalformedURLException e) {
@@ -74,7 +64,7 @@ public class Main {
 			}
 			for (int i = 1; i < args.length; i++) {
 				try {
-					p.loadFromPersistence(wl, new File(dir, args[i]+".ser").toURL()).toString(sb, "");
+					cadse.getPersistence().loadFromPersistence(wl, new File(dir, args[i]+".ser").toURL()).toString(sb, "");
 				} catch (MalformedURLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -88,7 +78,7 @@ public class Main {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
-			cadseDomainImpl.stop();
+			cadse.stop();
 		}
 	}
 }
