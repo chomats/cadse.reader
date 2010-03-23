@@ -38,7 +38,7 @@ public class Main {
 		java.io.File dir = new java.io.File(args[0]);
 		StringBuilder sb = new StringBuilder();
 		
-		EmbeddedCadse cadse = new EmbeddedCadse();
+		EmbeddedCadse cadse = new EmbeddedCadse(false);
 		
 		try {
 			cadse.start();
