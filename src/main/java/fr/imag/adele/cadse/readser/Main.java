@@ -19,11 +19,8 @@ import fr.imag.adele.fede.workspace.si.initmodel.InitModel;
 import fr.imag.adele.teamwork.db.ModelVersionDBService2;
 import fr.imag.adele.cadse.workspace.si.defaultclassreferencer.DefaultClassReferencer;
 import fr.imag.adele.teamwork.db.impl.ModelVersionDBImpl2;
-import fr.imag.adele.teamwork.db.impl.ModelVersionDBImpl2;
 import fr.imag.adele.cadse.cadseg.managers.mc.MC_StringToJavaElementManager;
-import fr.imag.adele.cadse.embedded.EmbeddedBundleContext;
 import fr.imag.adele.cadse.embedded.EmbeddedCadse;
-import fr.imag.adele.cadse.embedded.EmbeddedPlatform;
 
 public class Main {
 	
