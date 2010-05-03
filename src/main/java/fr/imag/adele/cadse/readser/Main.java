@@ -2,24 +2,12 @@ package fr.imag.adele.cadse.readser;
 
 import java.io.File;
 import java.net.MalformedURLException;
-import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.osgi.framework.BundleContext;
-
-
-
 import fr.imag.adele.cadse.core.CadseException;
-import fr.imag.adele.cadse.core.impl.internal.CadseDomainImpl;
 import fr.imag.adele.cadse.core.transaction.LogicalWorkspaceTransactionListener;
 import fr.imag.adele.cadse.core.transaction.delta.ItemDelta;
-import fr.imag.adele.fede.workspace.si.persistence.Persistence;
-import fr.imag.adele.fede.workspace.si.initmodel.InitModel;
-import fr.imag.adele.teamwork.db.ModelVersionDBService2;
-import fr.imag.adele.cadse.workspace.si.defaultclassreferencer.DefaultClassReferencer;
-import fr.imag.adele.teamwork.db.impl.ModelVersionDBImpl2;
-import fr.imag.adele.cadse.cadseg.managers.mc.MC_StringToJavaElementManager;
 import fr.imag.adele.cadse.embedded.EmbeddedCadse;
 
 public class Main {
