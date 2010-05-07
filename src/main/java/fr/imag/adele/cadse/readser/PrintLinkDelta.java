@@ -150,12 +150,6 @@ public class PrintLinkDelta implements LinkDelta {
 	}
 
 	@Override
-	public String getInfo() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public LinkDelta getInverseLink() {
 		// TODO Auto-generated method stub
 		return null;
