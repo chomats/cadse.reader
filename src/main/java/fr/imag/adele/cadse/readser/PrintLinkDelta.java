@@ -631,13 +631,13 @@ public class PrintLinkDelta implements LinkDelta {
 	}
 
 	@Override
-	public <T> void addAdater(ObjectAdapter<T> adapt) {
+	public <T> void addAdapter(ObjectAdapter<T> adapt) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public <T> void removeAdater(ObjectAdapter<T> adapt) {
+	public <T> void removeAdapter(ObjectAdapter<T> adapt) {
 		// TODO Auto-generated method stub
 		
 	}
