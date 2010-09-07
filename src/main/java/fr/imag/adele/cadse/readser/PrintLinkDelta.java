@@ -1,3 +1,23 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ *
+ * Copyright (C) 2006-2010 Adele Team/LIG/Grenoble University, France
+ */
 package fr.imag.adele.cadse.readser;
 
 import java.io.IOException;
@@ -10,7 +30,6 @@ import fr.imag.adele.cadse.core.Item;
 import fr.imag.adele.cadse.core.ItemType;
 import fr.imag.adele.cadse.core.Link;
 import fr.imag.adele.cadse.core.LinkType;
-import fr.imag.adele.cadse.core.ObjectAdapter;
 import fr.imag.adele.cadse.core.attribute.IAttributeType;
 import fr.imag.adele.cadse.core.transaction.delta.CreateOperation;
 import fr.imag.adele.cadse.core.transaction.delta.DeleteOperation;
@@ -581,11 +600,6 @@ public class PrintLinkDelta implements LinkDelta {
 		
 	}
 
-	@Override
-	public <T> T adapt(Class<T> clazz) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public <T> T getAttribute(IAttributeType<T> key) {
@@ -624,22 +638,33 @@ public class PrintLinkDelta implements LinkDelta {
 		throw new UnsupportedOperationException("Not implemented method");
 	}
 
+
 	@Override
-	public <T> T[] adapts(Class<T> clazz) {
+	public <T extends fr.imag.adele.cadse.objectadapter.ObjectAdapter<T>> T[] adapts(
+			Class<T> clazz) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <T> void addAdapter(ObjectAdapter<T> adapt) {
+	public <T> void addAdapter(
+			fr.imag.adele.cadse.objectadapter.ObjectAdapter<T> adapt) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public <T> void removeAdapter(ObjectAdapter<T> adapt) {
+	public <T> void removeAdapter(
+			fr.imag.adele.cadse.objectadapter.ObjectAdapter<T> adapt) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public <T extends fr.imag.adele.cadse.objectadapter.ObjectAdapter<T>> T adapt(
+			Class<T> clazz) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
